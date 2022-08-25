@@ -14,11 +14,16 @@ function getVisitors(){
             let visitors = data;
             console.log(data);
             let count;
+            let i=1;
             if (visitors.visitorCount != null){
                 count = visitors.visitorCount + 1;
             }
             else {
-                postVisitors();
+                if (i == 1){
+                    postVisitors();
+                    i++;
+                    getVisitors();
+                }
             }
             let visitorCount = document.createElement('span');
             visitorCount.innerText = `${count}`;
