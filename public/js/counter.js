@@ -11,7 +11,13 @@ fetch(apiUrl + "?id=101")
     .then((data) => {
         let visitors = data;
         console.log(data);
-        let count = visitors.visitorCount + 1;
+        let count;
+        if (visitors.visitorCount){
+            count = visitors.visitorCount + 1;
+        }
+        else {
+            
+        }
         let visitorCount = document.createElement('span');
         visitorCount.innerText = `${count}`;
         visitor.appendChild(visitorCount);
@@ -21,6 +27,27 @@ fetch(apiUrl + "?id=101")
 
 
 function getVisitors(){
+
+}
+
+function postVisitors(){
+    let data = {
+        "id": "101",
+        "visitorCount": 30
+      }
+    
+    let fetchData = {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+        }
+    }
+      
+    fetch(apiUrl, fetchData)
+        .then((response => response.json())
+        // .then(res => console.log(res));
+  
 
 }
 
