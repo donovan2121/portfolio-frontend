@@ -15,18 +15,21 @@ function getVisitors(){
             console.log(data);
             let count;
             let i=1;
+            let visitorCount = document.createElement('span');
             if (visitors.visitorCount != null){
                 count = visitors.visitorCount + 1;
+                visitorCount.innerText = `${count}`;
             }
             else {
                 if (i == 1){
                     postVisitors();
                     i++;
                     getVisitors();
+                    visitorCount.innerText = `30`;
                 }
             }
-            let visitorCount = document.createElement('span');
-            visitorCount.innerText = `${count}`;
+           
+            
             visitor.appendChild(visitorCount);
             updateVisitors(count);
             })
