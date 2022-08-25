@@ -19,6 +19,8 @@ function getVisitors(){
             if (visitors.visitorCount != null){
                 count = visitors.visitorCount + 1;
                 visitorCount.innerText = `${count}`;
+                visitor.appendChild(visitorCount);
+                updateVisitors(count);
             }
             else {
                 if (i == 1){
@@ -26,12 +28,9 @@ function getVisitors(){
                     i++;
                     getVisitors();
                     visitorCount.innerText = `30`;
+                    visitor.appendChild(visitorCount);
                 }
-            }
-           
-            
-            visitor.appendChild(visitorCount);
-            updateVisitors(count);
+            } 
             })
 }
 
