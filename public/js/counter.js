@@ -12,12 +12,13 @@ function getVisitors(){
             return response.json();
         })
         .then((data) => {
-            let visitors = data;
+            // let visitors = data;
             console.log(data);
             let count;
             let i=1;
             let visitorCount = document.createElement('span');
-            if (visitors.visitorCount === null ){
+            console.log(data.visitorCount);
+            if (data.visitorCount === null ){
                 if (i == 1){
                     postVisitors();
                     i++;
@@ -26,7 +27,7 @@ function getVisitors(){
                 }
             }
             else {    
-                count = visitors.visitorCount + 1;
+                count = data.visitorCount + 1;
                 visitorCount.innerText = `${count}`;
                 visitor.appendChild(visitorCount);
                 updateVisitors(count);
