@@ -14,7 +14,7 @@ function getVisitors(){
             let visitors = data;
             console.log(data);
             let count;
-            if (visitors.visitorCount != NaN){
+            if (visitors.visitorCount != null){
                 count = visitors.visitorCount + 1;
             }
             else {
@@ -24,8 +24,7 @@ function getVisitors(){
             visitorCount.innerText = `${count}`;
             visitor.appendChild(visitorCount);
             updateVisitors(count);
-            }
-        )
+            })
 }
 
 function postVisitors(){
