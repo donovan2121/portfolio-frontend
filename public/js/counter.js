@@ -22,7 +22,7 @@ function getVisitors(){
                 if (i == 1){
                     postVisitors();
                     i++;
-                    visitorCount.innerText = `30`;
+                    visitorCount.innerText = `1`;
                     visitor.appendChild(visitorCount);
                 }
             }
