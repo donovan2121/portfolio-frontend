@@ -10,15 +10,15 @@ function getVisitors(){
     fetch(apiUrl + "?id=101")
         .then((response) => {
             return response.json();
+            console.log(response);
         })
         .then((data) => {
-            // let visitors = data;
+            let visitors = data;
             console.log(data);
             let count;
             let i=1;
             let visitorCount = document.createElement('span');
-            console.log(data.visitorCount);
-            if (data.visitorCount === null ){
+            if (visitors.visitorCount === null ){
                 if (i == 1){
                     postVisitors();
                     i++;
@@ -27,7 +27,7 @@ function getVisitors(){
                 }
             }
             else {    
-                count = data.visitorCount + 1;
+                count = visitors.visitorCount + 1;
                 visitorCount.innerText = `${count}`;
                 visitor.appendChild(visitorCount);
                 updateVisitors(count);
